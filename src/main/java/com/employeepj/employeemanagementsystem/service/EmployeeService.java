@@ -1,6 +1,7 @@
 package com.employeepj.employeemanagementsystem.service;
 
 import com.employeepj.employeemanagementsystem.model.Employee;
+import org.springframework.data.domain.Page;
 
 
 import java.util.List;
@@ -11,4 +12,7 @@ public interface EmployeeService {
     void saveEmployee(Employee employee);
     Employee getEmployeeById(long id);
     void deleteEmployeeById(long id);
+    //Page<Employee> findPaginated(int pageNo, int pageSize);
+
+    Page<Employee> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
 }
